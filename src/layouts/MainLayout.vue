@@ -6,7 +6,6 @@
         <span class="brand-name">{{ t('app.title') }}</span>
       </div>
       <nav class="nav">
-        <RouterLink to="/">{{ t('nav.dashboard') }}</RouterLink>
         <RouterLink to="/plans">{{ t('nav.plans') }}</RouterLink>
         <RouterLink to="/customers">{{ t('nav.customers') }}</RouterLink>
       </nav>

@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
 import LoginView from '@/views/LoginView.vue';
 import PlansView from '@/views/PlansView.vue';
 import CustomersView from '@/views/CustomersView.vue';
@@ -20,8 +19,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        name: 'dashboard',
-        component: HomeView
+        redirect: '/plans'
       },
       {
         path: 'plans',
