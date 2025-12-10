@@ -8,12 +8,17 @@
           <div class="brand-sub">{{ t('auth.subtitle') }}</div>
         </div>
       </div>
-      <ElForm @submit.prevent="onSubmit" :model="form">
+      <ElForm @submit.prevent="onSubmit" :model="form" label-width="90px" label-position="left">
         <ElFormItem :label="t('auth.email')">
           <ElInput v-model="form.email" autocomplete="email" />
         </ElFormItem>
         <ElFormItem :label="t('auth.password')">
-          <ElInput v-model="form.password" type="password" autocomplete="current-password" />
+          <ElInput
+            v-model="form.password"
+            type="password"
+            show-password
+            autocomplete="current-password"
+          />
         </ElFormItem>
         <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
         <ElButton
@@ -102,6 +107,10 @@ const onSubmit = async () => {
 .brand-sub {
   color: var(--muted);
   font-size: 13px;
+}
+
+.el-form-item {
+  margin-bottom: 14px;
 }
 
 .error {
