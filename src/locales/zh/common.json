@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "阳光订阅台"
+  },
+  "nav": {
+    "dashboard": "总览",
+    "plans": "套餐",
+    "customers": "客户"
+  },
+  "home": {
+    "welcome": "用简洁明亮的控制台管理订阅。",
+    "cta": "新建套餐",
+    "stats": {
+      "activePlans": "启用套餐",
+      "monthlyRecurring": "月经常性收入",
+      "customers": "客户数量"
+    }
+  },
+  "plans": {
+    "title": "套餐",
+    "name": "名称",
+    "price": "价格",
+    "interval": "计费周期",
+    "status": "状态",
+    "currency": "币种"
+  },
+  "customers": {
+    "title": "客户",
+    "name": "名称",
+    "email": "邮箱",
+    "status": "状态"
+  }
+}

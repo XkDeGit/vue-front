@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "Sunny Subscriptions"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "plans": "Plans",
+    "customers": "Customers"
+  },
+  "home": {
+    "welcome": "Manage subscriptions with a bright and simple console.",
+    "cta": "Create a plan",
+    "stats": {
+      "activePlans": "Active plans",
+      "monthlyRecurring": "MRR",
+      "customers": "Customers"
+    }
+  },
+  "plans": {
+    "title": "Plans",
+    "name": "Name",
+    "price": "Price",
+    "interval": "Interval",
+    "status": "Status",
+    "currency": "Currency"
+  },
+  "customers": {
+    "title": "Customers",
+    "name": "Name",
+    "email": "Email",
+    "status": "Status"
+  }
+}
