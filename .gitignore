@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+.DS_Store
+*.log
+*.local
+*.lock
+/.idea
+/.vscode/*
+!.vscode/extensions.json
+/src/auto-imports.d.ts
+/src/components.d.ts
