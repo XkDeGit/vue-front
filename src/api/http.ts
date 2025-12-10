@@ -25,26 +25,26 @@ http.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 http.interceptors.response.use(
   (response) => response,
   async (error: AxiosError) => {
-  const auth = useAuthStore();
-  const status = error.response?.status;
-  const originalRequest = error.config as RetriableRequest | undefined;
+    const auth = useAuthStore();
+    const status = error.response?.status;
+    const originalRequest = error.config as RetriableRequest | undefined;
 
-  if (status === 401 && auth.canRefresh && originalRequest && !originalRequest._retry) {
-    originalRequest._retry = true;
-    try {
-      await auth.refresh();
-      return http(originalRequest);
-    } catch {
+    if (status === 401 && auth.canRefresh && originalRequest && !originalRequest._retry) {
+      originalRequest._retry = true;
+      try {
+        await auth.refresh();
+        return http(originalRequest);
+      } catch {
+        auth.logout(true);
+      }
+    }
+
+    if (status === 401 || status === 403) {
       auth.logout(true);
     }
-  }
 
-  if (status === 401 || status === 403) {
-    auth.logout(true);
+    return Promise.reject(error);
   }
-
-  return Promise.reject(error);
-}
 );
 
 export { http };
