@@ -10,10 +10,18 @@
         <RouterLink to="/customers">{{ t('nav.customers') }}</RouterLink>
       </nav>
       <div class="header-actions">
-        <ElButton :size="buttonSize" @click="switchLocale">
+        <ElButton
+          :size="buttonSize"
+          @click="switchLocale"
+        >
           {{ locale === 'en' ? '中文' : 'EN' }}
         </ElButton>
-        <ElButton type="text" :size="buttonSize" style="color: #1f2937" @click="handleLogout">
+        <ElButton
+          type="text"
+          :size="buttonSize"
+          style="color: #1f2937"
+          @click="handleLogout"
+        >
           {{ t('auth.logout') }}
         </ElButton>
       </div>
@@ -27,18 +35,20 @@
 
 <script setup lang="ts">
 import type { ComponentSize } from 'element-plus';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+
 import { useAuthStore } from '@/stores/auth';
 
 const { t, locale } = useI18n();
 const auth = useAuthStore();
-const buttonSize: ComponentSize = 'small';
+const buttonSize = computed<ComponentSize>(() => 'small');
 
-const switchLocale = () => {
+const switchLocale = (): void => {
   locale.value = locale.value === 'en' ? 'zh' : 'en';
 };
 
-const handleLogout = () => {
+const handleLogout = (): void => {
   auth.logout(true);
 };
 </script>

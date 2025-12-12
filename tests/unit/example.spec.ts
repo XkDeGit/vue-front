@@ -1,11 +1,14 @@
+import { mount, type VueWrapper } from '@vue/test-utils';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { ref } from 'vue';
+import { ref, type Ref } from 'vue';
+
 import type { Plan } from '@/api/types';
 import { i18n } from '@/locales/i18n';
 import PlansView from '@/views/PlansView.vue';
 
-const useQueryMock = vi.fn();
+type UseQueryResult = { data: Ref<Plan[] | undefined>; isError: boolean };
+
+const useQueryMock = vi.fn<unknown[], UseQueryResult>();
 
 vi.mock('@tanstack/vue-query', () => ({
   useQuery: (...args: unknown[]) => useQueryMock(...args)
@@ -15,13 +18,20 @@ const basePlans: Plan[] = [
   { id: 'starter', name: 'Starter', price: 29, currency: '$', interval: 'month', status: 'active' }
 ];
 
-const mountPlansView = () =>
+const mountPlansView = (): VueWrapper<InstanceType<typeof PlansView>> =>
   mount(PlansView, {
     global: {
       plugins: [i18n],
       stubs: {
         ElCard: { template: '<section class="el-card-stub"><slot /></section>' },
-        ElButton: { template: '<button class="el-button-stub"><slot /></button>' },
+        ElButton: {
+          props: {
+            size: { type: String, default: '' },
+            type: { type: String, default: '' },
+            plain: { type: Boolean, default: false }
+          },
+          template: '<button class="el-button-stub"><slot /></button>'
+        },
         ElTable: {
           props: {
             data: {
