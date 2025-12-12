@@ -11,14 +11,14 @@
       </nav>
       <div class="header-actions">
         <ElButton
-          :size="buttonSize"
+          size="small"
           @click="switchLocale"
         >
           {{ locale === 'en' ? '中文' : 'EN' }}
         </ElButton>
         <ElButton
           type="text"
-          :size="buttonSize"
+          size="small"
           style="color: #1f2937"
           @click="handleLogout"
         >
@@ -34,15 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentSize } from 'element-plus';
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { useAuthStore } from '@/stores/auth';
 
 const { t, locale } = useI18n();
 const auth = useAuthStore();
-const buttonSize = computed<ComponentSize>(() => 'small');
 
 const switchLocale = (): void => {
   locale.value = locale.value === 'en' ? 'zh' : 'en';

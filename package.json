@@ -18,7 +18,7 @@
   "dependencies": {
     "@tanstack/vue-query": "^5.37.1",
     "axios": "^1.6.8",
-    "element-plus": "^2.6.1",
+    "element-plus": "^2.12.0",
     "pinia": "^2.1.7",
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
