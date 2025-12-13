@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "订阅管理系统",
+    "welcome": "欢迎回来！"
+  },
+  "nav": {
+    "dashboard": "数据面板",
+    "subscriptions": "订阅中心",
+    "customers": "客户管理",
+    "analytics": "数据分析",
+    "settings": "系统设置"
+  },
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "新增",
+    "search": "搜索",
+    "loading": "加载中...",
+    "success": "成功",
+    "error": "错误",
+    "warning": "警告",
+    "info": "信息",
+    "logout": "退出登录",
+    "profile": "个人资料",
+    "language": "语言"
+  },
+  "auth": {
+    "login": "登录",
+    "loginTitle": "登录到您的账户",
+    "username": "用户名",
+    "password": "密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败",
+    "pleaseEnterUsername": "请输入用户名",
+    "pleaseEnterPassword": "请输入密码"
+  },
+  "dashboard": {
+    "totalSubscriptions": "总订阅数",
+    "activeUsers": "活跃用户",
+    "monthlyRevenue": "本月收入",
+    "vsLastMonth": "较上月",
+    "overview": "数据概览"
+  },
+  "subscription": {
+    "title": "订阅中心",
+    "list": "订阅列表",
+    "add": "添加订阅",
+    "edit": "编辑订阅",
+    "delete": "删除订阅",
+    "name": "订阅名称",
+    "user": "用户",
+    "status": "状态",
+    "price": "价格",
+    "expiryDate": "到期时间",
+    "actions": "操作",
+    "active": "有效",
+    "expiring": "即将到期",
+    "expired": "已过期"
+  }
+}
